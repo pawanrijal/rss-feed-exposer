@@ -1,14 +1,14 @@
-const section = require("../lib/databaseConnection");
+const { section } = require("../lib/databaseConnection");
 const {
   alreadyExistsException,
 } = require("../exceptions/alreadyExistsException");
 class SectionService {
   async create(payload) {
-    let sectionData = await section.findOne({
+    let sectionData = await section.findAll({
       where: { id: payload.id },
     });
 
-    if (sectionData === null) {
+    if (sectionData.length === 0) {
       let data = await section.create(payload);
       return data;
     } else {
