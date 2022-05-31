@@ -5,6 +5,12 @@ const PORT = process.env.PORT;
 const { sequelize } = require("./lib/databaseConnection");
 const bodyParser = require("body-parser");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const { router } = require("./routes");
+app.use(router);
+
 //sequelize authentication to database
 sequelize
   .authenticate()
