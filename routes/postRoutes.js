@@ -1,6 +1,6 @@
 const postRouter = require("express").Router();
-const postController = require("../controllers/rssController");
+const PostController = require("../controllers/postController");
 
-postRouter.get("/posts", postController.findAll);
+postRouter.post("/post", PostController.create);
 
 module.exports = { postRouter };

@@ -15,11 +15,6 @@ module.exports = (sequelize, type) => {
       required: true,
       allowNull: false,
     },
-    publishedDate: {
-      type: type.DATE,
-      required: true,
-      allowNull: false,
-    },
     title: {
       type: type.STRING,
       required: true,
