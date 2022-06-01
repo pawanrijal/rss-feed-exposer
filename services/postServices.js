@@ -1,5 +1,8 @@
 const slugify = require("slugify");
 const { post } = require("../lib/databaseConnection");
+const {
+  alreadyExistsException,
+} = require("../exceptions/alreadyExistsException");
 
 class PostService {
   async create(payload) {

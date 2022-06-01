@@ -17,7 +17,7 @@ const HttpException = require("./exceptions/HttpException");
 sequelize
   .authenticate()
   .then(() => {
-    sequelize.sync({ force: true });
+    // sequelize.sync({ force: true });
     console.log("Database connected successfully");
   })
   .catch((err) => {

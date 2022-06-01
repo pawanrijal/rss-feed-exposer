@@ -28,7 +28,7 @@ class SectionService {
       where: { id: payload.id },
     });
 
-    if (sectionData.length === 0) {
+    if (sectionData === null) {
       //if not already exists
       let data = await section.create(payload);
       return data;

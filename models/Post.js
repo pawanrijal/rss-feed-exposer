@@ -6,7 +6,6 @@ module.exports = (sequelize, type) => {
     },
     postType: {
       type: type.STRING,
-      unique: true,
       required: true,
       allowNull: false,
     },
