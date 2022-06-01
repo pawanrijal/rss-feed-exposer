@@ -1,0 +1,32 @@
+<rss version="2.0"><channel><status>ok</status><usertier>developer</usertier><total>200</total><startIndex>1</startIndex><pageSize>20</pageSize><currentPage>1</currentPage><pages>100</pages><section>
+    <item>
+      <id>technology</id>
+      <title> Technology</title>
+      <webUrl>https://www.pawan.com/technology</webUrl>
+      <apiUrl>https://www.pawan.com/api/technology</apiUrl>
+      </item>
+      </section><results>
+    <item>
+        <id>new-macbook-with-high-specs</id>
+        <postType>article</postType>
+        <sectionId> technology</sectionId>
+        <publishedDate>Wed Jun 01 2022 14:14:23 GMT+0545 (Nepal Time)</publishedDate>
+        <title> new macbook with high specs </title>
+      <webUrl>https://www.pawan.com/new-macbook-with-high-specs</webUrl>
+      <apiUrl>https://www.pawan.com/api/new-macbook-with-high-specs</apiUrl>
+      <isHosted>false</isHosted>
+      <pillarId>pillar/news</pillarId>
+      <pillarName>news</pillarName>
+        </item>
+    <item>
+        <id>elon-musk-buys-twitter</id>
+        <postType>article</postType>
+        <sectionId> technology</sectionId>
+        <publishedDate>Wed Jun 01 2022 15:41:58 GMT+0545 (Nepal Time)</publishedDate>
+        <title> Elon Musk buys twitter </title>
+      <webUrl>https://www.pawan.com/elon-musk-buys-twitter</webUrl>
+      <apiUrl>https://www.pawan.com/api/elon-musk-buys-twitter</apiUrl>
+      <isHosted>false</isHosted>
+      <pillarId>pillar/news</pillarId>
+      <pillarName>news</pillarName>
+        </item></results></channel></rss>

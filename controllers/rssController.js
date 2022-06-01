@@ -32,7 +32,7 @@ class RssController {
       );
 
       const xml = rssGenerator(response, postData);
-      fs.writeFileSync(__dirname + "../public/rss/rssField.xml", xml);
+      fs.writeFileSync("public/rss/rssField.xml", xml);
       res.type("application/xml");
       res.send(xml);
     } catch (err) {
