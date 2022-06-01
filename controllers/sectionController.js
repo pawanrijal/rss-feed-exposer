@@ -1,5 +1,6 @@
 const SectionService = require("../services/sectionServices");
 const successResponse = require("../utils/successResponse");
+
 class SectionController {
   async create(req, res, next) {
     try {
