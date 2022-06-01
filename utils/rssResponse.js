@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const successResponse = (
   res,
   userTier,
