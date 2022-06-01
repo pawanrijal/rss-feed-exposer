@@ -12,6 +12,12 @@ class SectionController {
 
   async findAll(req, res, next) {
     //code here
+    try {
+      let data = await SectionService.findAll(req.body);
+      successResponse(res, 400, data, "Section Fetched");
+    } catch (err) {
+      next(err);
+    }
   }
 }
 

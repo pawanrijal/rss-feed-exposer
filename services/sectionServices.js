@@ -16,7 +16,8 @@ class SectionService {
     }
   }
   async findAll(payload) {
-    //code here
+    let data = await section.findAll(payload);
+    return data;
   }
 }
 
