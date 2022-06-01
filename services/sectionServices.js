@@ -16,15 +16,20 @@ class SectionService {
     };
     payload.id = slugify(payload.title, options); //creating slug
 
-    payload.webUrl = payload.webUrl + payload.id; //updating url
-    payload.apiUrl = payload.apiUrl + payload.id; //updating api
+    const webUrl = "https://www.pawan.com/";
+    const apiUrl = "https://www.pawan.com/api/";
 
-    let sectionData = await section.findAll({
+    payload.webUrl = webUrl + payload.id; //updating url
+
+    payload.apiUrl = apiUrl + payload.id; //updating api
+
+    //check section id
+    let sectionData = await section.findOne({
       where: { id: payload.id },
     });
 
-    //if not already exists
     if (sectionData.length === 0) {
+      //if not already exists
       let data = await section.create(payload);
       return data;
     } else {
