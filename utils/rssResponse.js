@@ -21,7 +21,8 @@ const successResponse = (
     (response.section = section);
   response.results = results;
 
-  return res.json(response);
+  //   return res.json(response);
+  return response;
 };
 
 module.exports = successResponse;

@@ -1,8 +1,8 @@
 const postRouter = require("express").Router();
 const PostController = require("../controllers/postController");
 
-postRouter.post("/post", PostController.create);
-
-postRouter.get("post/:section", PostController.rssGenerate);
+const validate = require("../middleware/validationMiddleware");
+const postSchema = require("../validationSchemas/postValidationSchema");
+postRouter.post("/post", validate(postSchema), PostController.create);
 
 module.exports = { postRouter };
