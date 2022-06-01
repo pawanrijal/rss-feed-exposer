@@ -8,16 +8,22 @@ class RssController {
   async getRss(req, res, next) {
     try {
       const sectionId = req.params.section;
-      const sectionData = await section.findAll({ where: { id: sectionId } });
-      if (sectionData === null || sectionData === undefined) {
-        res.json({
+      const sectionData = await section.findAll({ where: { id: sectionId } }); //query section
+
+      //if not found return message
+      if (
+        sectionData === null ||
+        sectionData === undefined ||
+        sectionData.length === 0
+      ) {
+        return res.send({
           message: "Invalid section Id",
         });
       }
+
       const postData = await post.findAll({
         where: { sectionId },
       });
-
       const response = rssResponse(
         res,
         "developer",

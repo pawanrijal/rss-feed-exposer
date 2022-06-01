@@ -1,8 +1,10 @@
 const slugify = require("slugify");
-const { post } = require("../lib/databaseConnection");
+const { post, section } = require("../lib/databaseConnection");
 const {
   alreadyExistsException,
 } = require("../exceptions/alreadyExistsException");
+
+const { notFoundException } = require("../exceptions/notFoundException");
 
 class PostService {
   async create(payload) {
@@ -29,6 +31,18 @@ class PostService {
     payload.pillarId = "pillar/" + payload.pillarName;
 
     //check section id
+    let sectionData = await section.findOne({
+      where: { id: payload.sectionId },
+    });
+
+    if (
+      sectionData === null ||
+      sectionData === undefined ||
+      sectionData.length === 0
+    ) {
+      throw new notFoundException("Section");
+    }
+
     let postData = await post.findOne({
       where: { id: payload.id },
     });

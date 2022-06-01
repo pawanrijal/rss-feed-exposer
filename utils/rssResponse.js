@@ -23,7 +23,6 @@ const successResponse = (
 
   //   return res.json(response);
 
-  console.log(response);
   return response;
 };
 

@@ -10,6 +10,6 @@ sectionRouter.post(
   validate(sectionSchema),
   sectionController.create
 );
-sectionRouter.get("/section", sectionController.findAll);
+sectionRouter.get("/section/getall", sectionController.findAll);
 
 module.exports = { sectionRouter };
