@@ -22,6 +22,8 @@ class PostService {
 
     payload.webUrl = webUrl + payload.id; //updating url
 
+    payload.publishedDate = Date.now();
+
     payload.apiUrl = apiUrl + payload.id; //updating api
 
     payload.pillarId = "pillar/" + payload.pillarName;

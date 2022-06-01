@@ -14,13 +14,6 @@ class PostController {
   async findAll(req, res, next) {
     //code here
   }
-
-  async rssGenerate(req, res, next) {
-    try {
-    } catch (err) {
-      next(err);
-    }
-  }
 }
 
 module.exports = new PostController();

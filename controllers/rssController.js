@@ -1,8 +1,8 @@
 const rssResponse = require("../utils/rssResponse");
-const fs = require("fs");
-const { section, post } = require("../lib/databaseConnection");
 
-const xml2js = require("xml2js");
+const { section, post } = require("../lib/databaseConnection");
+const { rssGenerator } = require("../utils/rssGenerator");
+const fs = require("fs");
 
 class RssController {
   async getRss(req, res, next) {
@@ -18,10 +18,6 @@ class RssController {
         where: { sectionId },
       });
 
-      postData.posts.publishedDate = "dsandnasadd";
-
-      console.log(postData);
-
       const response = rssResponse(
         res,
         "developer",
@@ -34,12 +30,11 @@ class RssController {
         "ok",
         postData
       );
-      // const builder = new xml2js.Builder();
-      // const xml = builder.buildObject(response);
-      // res.type("application/xml");
-      // res.send(xml);
 
-      return res.json(response);
+      const xml = rssGenerator(response, postData);
+      fs.writeFileSync(__dirname + "../public/rss/rssField.xml", xml);
+      res.type("application/xml");
+      res.send(xml);
     } catch (err) {
       next(err);
     }

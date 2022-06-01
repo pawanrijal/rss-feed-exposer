@@ -1,7 +1,9 @@
 const sectionRouter = require("express").Router();
 const sectionController = require("../controllers/sectionController");
 const validate = require("../middleware/validationMiddleware");
-const sectionSchema = require("../validationSchemas/sectionValidationSchema");
+const {
+  sectionSchema,
+} = require("../validationSchemas/sectionValidationSchema");
 
 sectionRouter.post(
   "/section",

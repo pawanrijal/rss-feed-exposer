@@ -22,6 +22,8 @@ const successResponse = (
   response.results = results;
 
   //   return res.json(response);
+
+  console.log(response);
   return response;
 };
 
